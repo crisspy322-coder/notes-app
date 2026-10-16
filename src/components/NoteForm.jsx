@@ -1,51 +1,55 @@
-import {useState} from "react"
+import { useState} from "react";
 
 const NoteForm = () => {
 
-    const[ fromData, setFormData] = useState({
-        title: '',
-        category: 'work',
-        priority: 'Medium',
-        description: ''
+    const [formData, SEtFormData] = useState({
+      tittlr: '',
+      category: 'work',
+      priority: 'Medium',
+      description: ''
+
     })
 
     const [isFormVisible, setIsFormVisible] = useState(false)
 
     const handleChange = (e) => {
-        setFormData({
-            ...fromData,
+        SEtFormData({
+            ...formData,
             [e.target.name]: e.target.value
         })
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault()
+         e.preventDefault()
 
-        //validacion
-        if(!FormData.title || !FormData.description) return
+         //Validacion
+         if (!formData.title || !formData.description) return
 
-        //Crear elobjeto de la nota
-        const newNote = {id: Date.now(), ...formData}
+         //Crear objeto de la nota
 
-        //Agregar notas a el estado (state)
-        setNotes([newNote, ...notes])
+         const newNote = {id: Date.now(), ...formData}
 
-        //Reset de campos de formData
-        setFormData({
+         //agregar notas a el estado (state)
+         setNotes([newNote, ...notes])
+
+         //Reset de campos de formData
+         setFormData ({
             title: '',
-            category: 'work',
+            category: 'Work',
             priority: 'Medium',
             description: ''
-        })
-    }
 
+         })
+
+    }
     return(
         <>
-        <button 
-        className=""w-full bg-gray-100"
-        onClick = {()=>setIsFormVisible(!isFormVisible)}
-        >
+        <button>
+            
+        </button>
         </>
     )
 
 }
+
+export default NoteForm;
