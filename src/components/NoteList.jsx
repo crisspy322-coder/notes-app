@@ -1,10 +1,10 @@
-const NoteList = ({note}) => {
-    if(notes.legth === 0){ 
-return(
+const NoteList = ({notes}) => {
+    if(notes.length === 0){ 
+    return(
     <p className="text-center text-gray-500">
         No Notes yet!
     </p>
-)
+    )
 }
 
 return(
@@ -12,7 +12,7 @@ return(
         {notes.map((note) =>
         <div key={note.id} className="p-4 bg-while rounded-lg shadow-md border=l=4">
             <h3 className="text-lg font-bold">
-                {note.title}
+                {notes.title}
                 </h3>
                 <p className="text-sm text-gray-600">
                     <strong>Category: </strong> {notes.category}
@@ -21,7 +21,7 @@ return(
                         <strong>Priority: </strong> {notes.priority}
                         </p>
                         <p className="mt-2">
-                            {note.description}
+                            {notes.description}
                             </p>
         </div>
                 
@@ -32,4 +32,4 @@ return(
 )
 }
 
-export derfault NoteList
+export default NoteList

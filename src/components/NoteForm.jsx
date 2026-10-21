@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const NoteForm = () => {
+const NoteForm = (notes, setNotes) => {
 
     const [formData, setFormData] = useState({
         title: '',
@@ -57,7 +57,7 @@ const NoteForm = () => {
                             name= "title"
                             type= "text"
                             className="w-full p-2 border rounded-lg"
-                            value={formData,title}
+                            value={formData.title}
                             onChange={handleChange}
                         />
             </div>
@@ -70,10 +70,10 @@ const NoteForm = () => {
             className="w-full p-2 border rounded-lg"
             value={formData.priority}
             onChange={handleChange}
-                    >
-        <option value="High"> High</option>
-        <option value="Medium"> Medium</option>
-        <option value="Low"> Low</option>
+            >
+        <option value="High">🔴 High</option>
+        <option value="Medium">🟠 Medium</option>
+        <option value="Low">🟢 Low</option>
         </select>
         </div>
 
@@ -82,14 +82,14 @@ const NoteForm = () => {
 <select
 	name="category"
     title="category"
-	type="category"
+	type="text"
 	className="w-full p-2 border rounded-lg"
     value={formData.category}
     onChange={handleChange}
 >
-<option value="work"> work</option>
-<option value="Personal"> Personal</option>
-<option value="Ideas"> Ideas</option>
+<option value="work">📁 work</option>
+<option value="Personal">🏠 Personal</option>
+<option value="Ideas">💡 Ideas</option>
 </select>
 </div>
 
@@ -103,9 +103,8 @@ const NoteForm = () => {
 	onChange={handleChange}
 ></textarea>
 </div>
-
 <button className="w-full bg-purple-500 text-white py-2 rounded-lg cursor-pointer hover: bg-purple-600">
-  Add Note
+ 📝 Add Note
 </button>
 
                 </form>
